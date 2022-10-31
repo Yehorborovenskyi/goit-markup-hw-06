@@ -402,35 +402,34 @@ ul {
   margin-bottom: 30px;
 }
 
-.check-box {
-  display: flex;
-  align-items: center;
-
-  margin-right: 7px;
-  width: 16px;
-  height: 15px;
-  border: 2px solid var(--main-text-color);
-  border-radius: 2px;
-
-  transition: background 250ms var(--function-time), border 250ms var(--function-time);
-}
-
-.checkbox-icon {
-  fill: var(--accent-text-color);
-}
-
-.checkbox-condition:checked + .check-box {
-  background: var(--hover-text-color);
-  border: var(--hover-text-color);
-}
-
 .form-condition {
   display: flex;
   align-items: center;
+  gap: 7px;
   color: var(--lead-text-color);
   font-size: 14px;
   line-height: 1.71;
   letter-spacing: 0.03em;
+}
+
+.check-icon {
+  display: inline-block;
+
+  width: 16px;
+  height: 15px;
+
+  border: 2px solid var(--main-text-color);
+  border-radius: 4px;
+
+  transition: background-color 250ms var(--function-time), border 250ms var(--function-time);
+}
+
+.checkbox-condition:checked + .check-icon {
+  border-color: transparent;
+  background-size: contain;
+  background-color: var(--hover-text-color);
+  background-image: url('../images/check.svg');
+  background-origin: border-box;
 }
 
 .condition {
