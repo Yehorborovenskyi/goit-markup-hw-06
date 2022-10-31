@@ -246,7 +246,9 @@ ul {
   left: 50%;
 
   width: 528px;
-  height: 581px;
+  max-height: 581px;
+  height: 100%;
+  overflow: auto;
 
   background: var(--accent-text-color);
   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
@@ -277,6 +279,12 @@ ul {
   left: 50%;
   transform: translate(-50%, -50%);
   fill: rgba(0, 0, 0, 1);
+
+  transition: fill 250ms var(--function-time);
+}
+.btn-close:hover,
+.btn-close:focus {
+  fill: var(--hover-text-color);
 }
 .form-modal {
   display: flex;
@@ -317,6 +325,7 @@ ul {
   outline: none;
   border: 1px solid rgba(33, 33, 33, 0.2);
   border-radius: 4px;
+  cursor: pointer;
 
   transition: border 250ms var(--function-time);
 }
@@ -341,13 +350,29 @@ ul {
 }
 
 .feedback {
-  width: 448px;
+  width: 100%;
   height: 120px;
   padding: 12px 16px;
   outline: none;
   resize: none;
+  cursor: pointer;
+
   border: 1px solid rgba(33, 33, 33, 0.2);
   border-radius: 4px;
+
+  transition: border 250ms var(--function-time);
+}
+
+.feedback::placeholder {
+  font-size: 12px;
+  line-height: 1.2;
+  letter-spacing: 0.01em;
+
+  color: rgba(117, 117, 117, 0.5);
+}
+
+.feedback:focus-within {
+  border: 1px solid var(--hover-text-color);
 }
 
 .form-text {
@@ -360,16 +385,48 @@ ul {
   color: #212121;
 }
 
+.checkbox-condition {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+
 .form-checkbox {
   display: flex;
+  justify-content: center;
   margin-bottom: 30px;
 }
 
-.checkbox-condition {
+.check-box {
+  display: flex;
+  align-items: center;
+
   margin-right: 7px;
+  width: 16px;
+  height: 15px;
+  border: 2px solid var(--main-text-color);
+  border-radius: 2px;
+
+  transition: background 250ms var(--function-time), border 250ms var(--function-time);
+}
+
+.checkbox-icon {
+  fill: var(--accent-text-color);
+}
+
+.checkbox-condition:checked + .check-box {
+  background: var(--hover-text-color);
+  border: var(--hover-text-color);
 }
 
 .form-condition {
+  display: flex;
+  align-items: center;
   color: var(--lead-text-color);
   font-size: 14px;
   line-height: 1.71;
@@ -385,6 +442,7 @@ ul {
   display: flex;
   justify-content: center;
 }
+
 .form-button {
   width: 200px;
   height: 50px;
@@ -398,6 +456,7 @@ ul {
   background-color: var(--hover-text-color);
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
   border-radius: 4px;
+  border-color: transparent;
 }
 
 /*  */
@@ -699,7 +758,9 @@ ul {
   padding-top: 15px;
   padding-bottom: 15px;
   padding-left: 16px;
+  color: var(--accent-text-color);
 
+  outline: none;
   background: transparent;
   border: 1px solid rgba(255, 255, 255, 0.3);
   filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.15));
