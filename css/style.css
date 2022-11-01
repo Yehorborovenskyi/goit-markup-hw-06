@@ -269,7 +269,7 @@ ul {
   height: 30px;
 
   border-radius: 50%;
-  border: 1px solid rgba(0, 0, 0, 0.1);
+  border: transparent;
   cursor: pointer;
 }
 
@@ -290,9 +290,6 @@ ul {
   display: flex;
   flex-direction: column;
   padding: 40px 40px;
-}
-
-.all-form {
 }
 
 .form-field {
@@ -446,6 +443,7 @@ ul {
   width: 200px;
   height: 50px;
 
+  font-weight: 700;
   font-size: 16px;
   line-height: 1.9;
   letter-spacing: 0.06em;
