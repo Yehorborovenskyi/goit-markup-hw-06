@@ -35,6 +35,12 @@ ul {
   margin: 0;
   padding: 0;
 }
+.container {
+  width: 1200px;
+  padding-left: 15px;
+  padding-right: 15px;
+  margin: 0 auto;
+}
 .section {
   padding-top: 94px;
   padding-bottom: 94px;
@@ -44,12 +50,6 @@ ul {
 }
 .headers {
   border-bottom: 1px solid #ecec;
-}
-.container {
-  width: 1200px;
-  padding-left: 15px;
-  padding-right: 15px;
-  margin: 0 auto;
 }
 
 .nav-header {
